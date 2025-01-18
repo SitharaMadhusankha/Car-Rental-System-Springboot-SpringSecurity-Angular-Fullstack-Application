@@ -1,7 +1,8 @@
 package com.SpringSecurity.Security_JWT.entity;
 
-import jakarta.persistence.*;
 
+
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
