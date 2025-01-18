@@ -12,7 +12,7 @@ public class RoleService {
     private RoleRepository roleRepository;
 
     public Role createNewRole(Role role){
-        return roleRepository.createNewRole(role);
+        return roleRepository.save(role);
     }
 
 }
