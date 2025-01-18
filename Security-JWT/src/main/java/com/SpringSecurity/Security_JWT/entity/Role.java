@@ -10,7 +10,7 @@ public class Role {
     private String roleName;
     private String roleDescription;
 
-    public String getRoleName() {
+    public String getRoleName(String admin) {
         return roleName;
     }
 
@@ -18,7 +18,7 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public String getRoleDescription() {
+    public String getRoleDescription(String s) {
         return roleDescription;
     }
 

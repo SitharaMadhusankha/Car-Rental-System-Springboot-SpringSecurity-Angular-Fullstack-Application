@@ -8,7 +8,7 @@ import java.util.Set;
 public class User {
     @Id
     private String userName;
-    private String userLastName;
+    private String userFirstName;
     private String getUserLastName;
     private String userPassword;
     //many to many mapping
@@ -30,12 +30,12 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserLastName() {
-        return userLastName;
+    public String getUserFirstName(String sithara) {
+        return userFirstName;
     }
 
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+    public void setUserFirstName(String userFirstName) {
+        this.userFirstName = userFirstName;
     }
 
     public String getGetUserLastName() {
@@ -61,5 +61,6 @@ public class User {
     public void setRole(Set<Role> role) {
         this.role = role;
     }
+
 
 }
