@@ -1,7 +1,7 @@
 package com.SpringSecurity.Security_JWT.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
 public class Role {
@@ -10,7 +10,15 @@ public class Role {
     private String roleName;
     private String roleDescription;
 
-    public String getRoleName(String admin) {
+    public Role() {
+    }
+
+    public Role(String roleName, String roleDescription) {
+        this.roleName = roleName;
+        this.roleDescription = roleDescription;
+    }
+
+    public String getRoleName() {
         return roleName;
     }
 
@@ -18,7 +26,7 @@ public class Role {
         this.roleName = roleName;
     }
 
-    public String getRoleDescription(String s) {
+    public String getRoleDescription() {
         return roleDescription;
     }
 

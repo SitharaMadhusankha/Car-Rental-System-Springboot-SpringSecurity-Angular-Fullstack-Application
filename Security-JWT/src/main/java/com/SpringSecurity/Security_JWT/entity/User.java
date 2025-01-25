@@ -10,16 +10,17 @@ public class User {
     @Id
     private String userName;
     private String userFirstName;
-    private String getUserLastName;
+    private String UserLastName;
     private String userPassword;
     //many to many mapping
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    @JoinTable(name = "USER_ROLE",joinColumns ={
-            @JoinColumn(name ="USER_ID" )
+    @JoinTable( name = "USER_ROLE",
+    joinColumns = {
+        @JoinColumn(name = "USER_ID")
     },
-    inverseJoinColumns = {
+        inverseJoinColumns = {
             @JoinColumn(name = "ROLE_ID")
-    }
+        }
     )
     private Set<Role> role;
 
@@ -31,7 +32,7 @@ public class User {
         this.userName = userName;
     }
 
-    public String getUserFirstName(String sithara) {
+    public String getUserFirstName() {
         return userFirstName;
     }
 
@@ -39,12 +40,12 @@ public class User {
         this.userFirstName = userFirstName;
     }
 
-    public String getGetUserLastName() {
-        return getUserLastName;
+    public String getUserLastName() {
+        return UserLastName;
     }
 
-    public void setGetUserLastName(String getUserLastName) {
-        this.getUserLastName = getUserLastName;
+    public void setUserLastName(String userLastName) {
+        UserLastName = userLastName;
     }
 
     public String getUserPassword() {
@@ -62,6 +63,4 @@ public class User {
     public void setRole(Set<Role> role) {
         this.role = role;
     }
-
-
 }
