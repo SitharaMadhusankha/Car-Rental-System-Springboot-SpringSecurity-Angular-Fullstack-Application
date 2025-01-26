@@ -30,12 +30,13 @@ public class UserService {
  public void initRoleAndUser(){
         Role adminRole = new Role();
         Role userRole = new Role();
-        if(!roleRepository.existsById("admin")){
-            adminRole.setRoleName("admin");
+        if(!roleRepository.existsById("Admin")){
+            adminRole.setRoleName("Admin");
+            adminRole.setRoleDescription("Admin role");
             roleRepository.save(adminRole);
         }
-        if(!roleRepository.existsById("user")){
-            userRole.setRoleName("user");
+        if(!roleRepository.existsById("User")){
+            userRole.setRoleName("User");
             userRole.setRoleDescription("User Role");
             roleRepository.save(userRole);
         }
@@ -43,8 +44,8 @@ public class UserService {
             User user = new User();
             user.setUserName("admin123");
             user.setUserPassword(getEncodedPassword("admin@123"));
-            user.setUserFirstName("Malinga");
-            user.setUserLastName("Lakshan");
+            user.setUserFirstName("Sithara");
+            user.setUserLastName("Madusankha");
 
             Set<Role> adminRoles = new HashSet<>();
             adminRoles.add(adminRole);
