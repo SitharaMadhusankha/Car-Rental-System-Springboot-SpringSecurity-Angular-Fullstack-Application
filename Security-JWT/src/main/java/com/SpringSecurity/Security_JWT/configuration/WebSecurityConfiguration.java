@@ -19,10 +19,10 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
-//    @Bean
-//    public AuthenticationManager authenticationManagerBean() throws Exception{
-//        return super.authenticationManagerBean();
-//    }
+    @Bean
+    public AuthenticationManager authenticationManagerBean() throws Exception{
+        return super.authenticationManagerBean();
+    }
 
 
 
