@@ -27,4 +27,8 @@ export class UserAuthService {
   public clear(){
     localStorage.clear();
   }
+
+  public isLoggedIn(){
+    return this.getRoles()&& this.getToken();
+  }
 }

@@ -14,7 +14,7 @@ public class LoginController {
     private JwtService jwtService;
 
     @PostMapping({"/authentication"})
-    public LoginResponse createJwtTokenAndLigin(@RequestBody LoginRequest loginRequest) throws Exception{
+    public LoginResponse createJwtTokenAndLogin(@RequestBody LoginRequest loginRequest) throws Exception{
         return jwtService.createJwtToken(loginRequest);
     }
 }
