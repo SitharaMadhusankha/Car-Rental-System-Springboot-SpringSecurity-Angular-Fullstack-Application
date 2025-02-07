@@ -1,0 +1,101 @@
+.left-side{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-side{
+ // border: 1px solid red;
+  background-color:whitesmoke;
+}
+.register-content{
+  height: 100vh;
+}
+.register-form{
+  text-align: center;
+  padding-top: 110px;
+
+  h3{
+    font: {
+      size: 35px;
+      weight: 700;
+    };
+  }
+  p{
+    margin: {
+      top: 8px;
+      bottom: 0;
+    };
+
+    a{
+      display: inline-block;
+    }
+  }
+  form{
+    margin-top: 30px;
+    .form-group{
+      margin-bottom:16px;
+    }
+    .form-control{
+      background-color: whitesmoke;
+      color: black;
+      border: none;
+      box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+      font-size: 15px;
+      &:focus{
+        &::placeholder{
+          color: transparent;
+        }
+      }
+    }
+    button{
+      background-color: darkblue;
+      color: white;
+      width: 100%;
+      box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+      padding: 12px 25px;
+
+      border:{
+        width: 2px;
+        style: solid;
+        color: darkblue;
+        radius: 5px;
+      };
+      font-size: 15px;
+      font-weight: 700;
+
+      &:hover,&:focus{
+        background-color: blue ;
+        color: whitesmoke;
+      }
+    }
+  .connect-with-social{
+    margin-top: 15px;
+    span{
+      display: block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+
+    }
+    button{
+      display: block;
+      width: 100%;
+      border: 1px solid darkblue;
+      padding: 12px 25px;
+      font-weight: 500;
+      color: darkblue;
+      background-color: transparent;
+      position: relative;
+
+      img{
+        position: absolute;
+        left: 15px;
+        bottom: 18%;
+
+      }
+    }
+  }
+  }
+}

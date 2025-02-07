@@ -6,12 +6,15 @@ import {AdminComponent} from "./component/admin/admin.component";
 import {UserComponent} from "./component/user/user.component";
 import {LoginComponent} from "./component/login/login.component";
 import {ForbiddenComponent} from "./component/forbidden/forbidden.component";
+import {AuthGuard} from "./component/auth/auth.guard";
+import {SignupComponent} from "./component/signup/signup.component";
 
 const routes: Routes = [
+  {path:'',component:SignupComponent},
   {path:'cars',component:CarComponent},
   {path:'home',component:HomeComponent},
-  {path:'admin',component:AdminComponent},
-  {path:'user',component:UserComponent},
+  {path:'admin',component:AdminComponent,canActivate:[AuthGuard],data: {roles:['Admin']}},
+  {path:'user',component:UserComponent,canActivate:[AuthGuard],data: {roles:['User']}},
   {path:'login',component:LoginComponent},
   {path:'forbidden',component:ForbiddenComponent}
 ];

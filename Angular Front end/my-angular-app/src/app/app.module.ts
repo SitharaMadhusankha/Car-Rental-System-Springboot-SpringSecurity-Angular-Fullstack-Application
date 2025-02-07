@@ -19,8 +19,11 @@ import { UserComponent } from './component/user/user.component';
 import { LoginComponent } from './component/login/login.component';
 import { ForbiddenComponent } from './component/forbidden/forbidden.component';
 import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
+import {AuthGuard} from "./component/auth/auth.guard";
+import {AuthInterceptor} from "./component/auth/auth.interceptor";
+import { SignupComponent } from './component/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import {RouterModule} from "@angular/router";
     AdminComponent,
     UserComponent,
     LoginComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,15 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     RouterModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
