@@ -10,23 +10,25 @@
         <div class="register-form">
           <h3>Efficient Car Rental Solution</h3>
           <p>Already signed up? <a routerLink="/login">Log in</a></p>
-          <form>
+          <form (ngSubmit)="register()">
             <div class="form-group">
-              <input type="email" name="email" id="email" placeholder="Your Email Address" class="form-control">
+              <input type="email" name="email" id="email" [(ngModel)]="signup.username"  placeholder="Your Email Address" class="form-control">
             </div>
             <div class="form-group">
-              <input type="password" name="password" id="password" placeholder="Create A Password" class="form-control">
+              <input type="password" name="password" id="password" [(ngModel)]="signup.userPassword" placeholder="Create A Password" class="form-control">
             </div>
             <div class="form-group">
-              <input type="text" name="firstname " id="firstname" placeholder="Enter You First Name" class="form-control">
+              <input type="text" name="firstname " id="firstname" [(ngModel)]="signup.userFirstName" placeholder="Enter You First Name" class="form-control">
             </div>
             <div class="form-group">
-              <input type="text" name="lastname" id="lastname" placeholder="Enter You Last Name" class="form-control">
+              <input type="text" name="lastname" id="lastname" [(ngModel)]="signup.userLastName" placeholder="Enter You Last Name" class="form-control">
             </div>
             <button type="submit">Sign Up</button>
             <div class="connect-with-social">
               <span>Or</span>
-              <button type="submit"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAA9klEQVRIS2NkGCDAOED2MgxZi5mBIWYIxDzQkPsJpK8A8WdCIUmJjwOBhk8FYkk0S64D+Vq0sjgBaPB8HIZfA4pr08JiVqChz4BYhN4WOwAt3I9m6U0gfxsQfwLi19AowOtpcuI4HmjiAiRTXwHZUkD8l1DwIsuTY3Ea0ICZSIYcArLtSbEUpJYci9OB+mYgWXQAyHYcdhaDsogmkb5aDlQXRUgtsUFNisVtQEurB8LiVKClcwbCYhegpXupZTGyOSAfzRqIVD1qMd0KkNGgHg1qQmUHWJ7YsnpQFCCgVqU6kkveA9kXifImkiJyfEyqHVjVjzyLAcEpNR/+VUHuAAAAAElFTkSuQmCC"/>Connect With facebook</button>
+              <button type="submit" class="facebook"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAA9klEQVRIS2NkGCDAOED2MgxZi5mBIWYIxDzQkPsJpK8A8WdCIUmJjwOBhk8FYkk0S64D+Vq0sjgBaPB8HIZfA4pr08JiVqChz4BYhN4WOwAt3I9m6U0gfxsQfwLi19AowOtpcuI4HmjiAiRTXwHZUkD8l1DwIsuTY3Ea0ICZSIYcArLtSbEUpJYci9OB+mYgWXQAyHYcdhaDsogmkb5aDlQXRUgtsUFNisVtQEurB8LiVKClcwbCYhegpXupZTGyOSAfzRqIVD1qMd0KkNGgHg1qQmUHWJ7YsnpQFCCgVqU6kkveA9kXifImkiJyfEyqHVjVjzyLAcEpNR/+VUHuAAAAAElFTkSuQmCC"/>Connect With facebook</button>
+              <button type="submit" class="twitter"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS+2VSyhFURSGiZHII+UReZQByUCkKIVMkFISpYiZSBIGBgykPJKJiZKJKMIEQ0qYSMnYiLwKkeSV8i3tW9fpHHvfe0/uxK6vfe9Za69/r7X3WSc0JEgjNEi6If/Cf1Z5N0qdym7boAei4QUmYQyeVSZJar7yZGYVjsAwB63wZpB+Jj77kGjje8GzJciFBCiCDyfhOgxrsAs18KQRP8ReoPG5w16mqrHnJNyNYVoZT5kb4cghsATbNqjKucpYktpyEm7CsOgV7JPfQ2oznvPymOX5sIHwPT4tsOHtaz3jeIzXEGYJ+Mr/VbWpY+ZLGIQRA+EJfPqtfna3ehynPk3AR+wPkGYgLBsc1Qk341AI5SC30Y0hr9q8TrgYB3k93BwlBDvQCYtdbnG+S8pyIaWpyCX9MezOOAePTUh3QXyFGA12cZxaZizOA9ABUQFsQO7Kji/CnThL75WW6O+QI3Psak4ZZ7PoBML9VWVdBTh2tt++TpUsXIYYP8SnWNP72zrdZ1HOugtKVQYme5APjGz6PRBh2ZiUbBYyDFQX8GnXiUoc74zj+J+ngkcyV0MtJBsISguV1jhj4PvtYi11Pc+kr2YZBpAPu9wDOc8bwzW2wp618v5VqfKmqFnO+1ZxxrwO0iAkW5+H7nL5HNB0wb+waaUC9gtaqb8AQMVNHyFXXXwAAAAASUVORK5CYII="/>Connect With twitter</button>
+              <button type="submit" class="google"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACVklEQVRIS+WWzUtVURTFlSRHKg6iD7ChQkhFIElRUNMSCiLRCBpYhAOlwPofKjCCIBMNgiCIwkmggwIRNSKoyEkUQQlBgvaBSp/Ub8kdnLc9997tUxBpw+K9ve/ae91z7jn7nNKSVbLSVdItWXPCG5mpGvALvAdfljpz3hGvp3AbOAz2gCojNIk/CK6Dl56X8Ag3UegG2OIo+BdOP7gIprP4ecJnSO5xCFrKFIFa8DUtN0u4maS7RYj+JucIeFjMiHeQ9BTo21r7QeA5eJZM53Z+jyakP/weBw/yXjhtxMMk7jfJ35Jvd4tfiYe2AecE+OARVWJM+CDxR6bwZ/zd4E3eSLzPY8K3ST5pCmj67nmLenhWeF3y3cJ9+paYVqi2yoqZFd5M5Y+m+mX8CxHFCmL67h47B+lqSLTCWs0vTCV1rL5I9UpiqfvU8K/hd2YJ1/PwlUlSE+ld5oi7yT+fJaxtoa4T2hWcrmUKq4VeyhLW1KvHVgckbaE6YBeXFuK+yAttI6bDIrQWnIIuGNtOahCnTKI600BEJBaSaLt5oGO0YCZjwgcgPTaJM/iNIK+BqPkMgbIgf5z/OkoLLK1ljkbIs8TOgjuRYUpITUbHp7ZZaMdw7nuFd0J8AsojImPERsB3oLWwNZmNTRGuDpKGSDzzztWaMrpYnVjsE8FdwDakBW7eReA0HF0E8nhWWG1W16TXaW/pKXiI5JvAc/WRjq4+HWAua2o8wsoPL3t78dUuQ3uHo6NUrXHC8y28wraWFpKutz+Btti8RyzkFCu8VJ1F/P9P+B+aLV4fpQAiJwAAAABJRU5ErkJggg=="/>Connect With google</button>
             </div>
           </form>
         </div>

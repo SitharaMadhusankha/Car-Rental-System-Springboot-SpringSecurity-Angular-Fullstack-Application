@@ -96,6 +96,27 @@
 
       }
     }
+    .facebook{
+      &:hover{
+        background-color: mediumblue;
+        color: white;
+      }
+    }
+
+    .twitter{
+      margin-top: 20px;
+      &:hover{
+        background-color: mediumblue;
+        color: white;
+      }
+    }
+    .google{
+      margin-top: 20px;
+      &:hover{
+        background-color: green;
+        color: white;
+      }
+    }
   }
   }
 }
